@@ -9,6 +9,8 @@
 
 
 ## Sources Exploration
+
 * Find linux logo
 * Find platform_device_register() function definition
 * Find the maintainer of the Android drivers
+* Are AVR CPU supported. RISC ? IA64 ? Kirkwood ?
