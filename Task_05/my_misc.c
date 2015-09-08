@@ -1,13 +1,13 @@
-#include <linux/module.h>	//...
-#include <linux/miscdevice.h>	//...
-#include <linux/string.h>	//strlen, ctrcmp
-#include <linux/fs.h>		//struct file_operations
-#include <linux/uaccess.h>	//copy_*_user
+#include <linux/module.h>	/*module*/
+#include <linux/miscdevice.h>	/*misc_devices*/
+#include <linux/string.h>	/*strlen, ctrcmp*/
+#include <linux/fs.h>		/*struct file_operations*/
+#include <linux/uaccess.h>	/*copy_*_user*/
 
 static const char *password = "fogale\n";
 
 static ssize_t misc_read(struct file *file, char __user *buf,
-			      size_t count, loff_t *ppos)
+			 size_t count, loff_t *ppos)
 {
 	ssize_t retval = 0;
 	size_t id_len = strlen(password);
@@ -27,7 +27,7 @@ out:
 }
 
 static ssize_t misc_write(struct file *file, const char __user *buf,
-			       size_t count, loff_t *ppos)
+			  size_t count, loff_t *ppos)
 {
 	ssize_t retval = 0;
 	size_t id_len = strlen(password);
@@ -68,6 +68,7 @@ static struct miscdevice misc_dev = {
 static int __init misc_init(void)
 {
 	int retval;
+
 	retval = misc_register(&misc_dev);
 
 	if (retval)
@@ -79,6 +80,7 @@ static int __init misc_init(void)
 static void __exit misc_cleanup(void)
 {
 	int retval;
+
 	retval = misc_deregister(&misc_dev);
 	if (retval)
 		pr_err("Fail to deregister my Misc Driver\n");
