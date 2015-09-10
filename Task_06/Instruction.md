@@ -1,5 +1,5 @@
-= List and Thread
-== Deal with list
+# List and Thread
+## Deal with list
 * define a `struct identity` having those 2 fields:
         char name[20];
         int id;
@@ -27,4 +27,4 @@
         else
                 pr_debug("oops\n");
 
-== Add a Thread
+## Add a Thread

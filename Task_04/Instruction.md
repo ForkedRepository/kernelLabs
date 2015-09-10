@@ -1,5 +1,5 @@
-= Misc Driver
-== First Driver
+# Misc Driver
+## First Driver
 Write a misc driver that will:
 * Use a dynamic minor number
 * implement read and write function
